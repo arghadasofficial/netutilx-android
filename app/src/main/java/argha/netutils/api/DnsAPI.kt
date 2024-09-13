@@ -11,15 +11,15 @@ import retrofit2.http.Query
 
 interface DnsAPI {
 
-    @GET("dnsx/get_servers.php?")
-    suspend fun fetchTypes(
-        @Query("api_key") apiKey: String
-    ): Response<DnsServers>
-
     @GET("dnsx/get_types.php?")
-    suspend fun fetchServers(
+    suspend fun fetchDnsTypes(
         @Query("api_key") apiKey: String
     ): Response<DnsTypes>
+
+    @GET("dnsx/get_servers.php?")
+    suspend fun fetchQueryServers(
+        @Query("api_key") apiKey: String
+    ): Response<DnsServers>
 
     @GET("dnsx/get_dns_info.php?")
     suspend fun fetchDnsInfo(

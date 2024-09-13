@@ -74,6 +74,8 @@ dependencies {
 
     implementation(libs.retrofit2.retrofit)
     implementation(libs.converter.gson)
+
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 }
 
 // Allow references to generated code
