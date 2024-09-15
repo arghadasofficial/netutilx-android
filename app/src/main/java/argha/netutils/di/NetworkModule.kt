@@ -1,5 +1,6 @@
 package argha.netutils.di
 
+import argha.netutils.api.AuthAPI
 import argha.netutils.api.DnsAPI
 import dagger.Module
 import dagger.Provides
@@ -25,6 +26,12 @@ class NetworkModule {
     @Provides
     fun providesDnsApi(retrofit: Retrofit) : DnsAPI {
         return retrofit.create(DnsAPI::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun providesAuthApi(retrofit: Retrofit) : AuthAPI {
+        return retrofit.create(AuthAPI::class.java)
     }
 
 }

@@ -16,11 +16,11 @@ import javax.inject.Inject
 @HiltViewModel
 class DnsViewModel @Inject constructor(private val dnsRepository: DnsRepository) : ViewModel() {
 
-    val dnsTypes: StateFlow<DnsTypes> = dnsRepository.dnsTypes
-    val dnsQueryServers: StateFlow<DnsServers> = dnsRepository.dnsQueryServers
-    val dnsInfo: StateFlow<DnsInfo> = dnsRepository.dnsInfo
-    val soaInfo: StateFlow<SOAInfo> = dnsRepository.soaInfo
-    val allDnsInfo: StateFlow<DnsAllInfo> = dnsRepository.allDnsInfo
+    val dnsTypes: StateFlow<DnsTypes?> = dnsRepository.dnsTypes
+    val dnsQueryServers: StateFlow<DnsServers?> = dnsRepository.dnsQueryServers
+    val dnsInfo: StateFlow<DnsInfo?> = dnsRepository.dnsInfo
+    val soaInfo: StateFlow<SOAInfo?> = dnsRepository.soaInfo
+    val allDnsInfo: StateFlow<DnsAllInfo?> = dnsRepository.allDnsInfo
 
     private val apiKey = "7de71c8035945809ef7ba64cd9264570498dc1186f8dcf78663c1fa4a2d423de"
 
